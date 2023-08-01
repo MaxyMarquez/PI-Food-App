@@ -112,6 +112,7 @@ export const searchRecipes = (searchTerm, selectedDiet, isCreated) => {
                     searchTerm: searchTerm,
                     selectedDiet: selectedDiet,
                     isCreated: isCreated,
+                    currentPage: 1,
                 },
             });
         } catch (error) {

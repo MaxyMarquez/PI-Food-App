@@ -48,6 +48,7 @@ const rootReducer = (state = initialState, action) => {
                 searchTerm: action.payload.searchTerm,
                 selectedDiet: action.payload.selectedDiet,
                 isCreated: action.payload.isCreated,
+                currentPage: action.payload.currentPage,
                 isLoading: false,
             };
         case SORT_RECIPES:
