@@ -15,17 +15,17 @@ const addDiets = async () => {
         });
 
         // Inserta las dietas, si no existen, en la tabla 'diets' de la base de datos
-        for (const diet of arrDiets) {
+        await Promise.all(Array.from(arrDiets).map(async diet => {
             try {
                 await Diet.findOrCreate({
                     where: {
                         name: diet,
                     }
-                });
+                })
             } catch (error) {
                 console.error(error);
             }
-        }
+        }));
     } catch (error) {
         console.error("Error al agregar las dietas:", error);
     }

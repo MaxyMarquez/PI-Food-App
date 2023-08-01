@@ -39,7 +39,7 @@ const FilterDiets = () => {
 
     return (
         <div className='filter__container'>
-            <label htmlFor="">Diet:</label>
+            <label>Diet:</label>
             <select className='filter__select' name="" id="" value={selectedDiet} onChange={handleChange}>
                 <option value="">All Diets</option>
                 {diets?.map((diet) => (
@@ -49,7 +49,7 @@ const FilterDiets = () => {
                 ))}
             </select>
 
-            <label >Order:</label>
+            <label>Order:</label>
             <select
                 className='filter__select'
                 value={alphaSort}
@@ -61,7 +61,7 @@ const FilterDiets = () => {
                 <option value="alpha_desc">Descendant</option>
             </select>
 
-            <label >Health Score:</label>
+            <label>Health Score:</label>
             <select
                 className='filter__select'
                 value={scoreSort}
@@ -73,7 +73,7 @@ const FilterDiets = () => {
                 <option value="score_desc">Descendant</option>
             </select>
 
-            <label >Search in:</label>
+            <label>Created By:</label>
             <select
                 className='filter__select'
                 value={isCreated}
@@ -81,8 +81,8 @@ const FilterDiets = () => {
                 onChange={event => handleCreatedChange(event)}
             >
                 <option value='default'>Select a Option</option>
-                <option value="notCreated">API</option>
-                <option value="created">Data Base</option>
+                <option value="created">Users</option>
+                <option value="notCreated">Default</option>
             </select>
 
             <button className='filter__button-reset' type="button" onClick={handleSortReset}>

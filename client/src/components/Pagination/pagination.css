@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 15px 0;
-    width: 650px;
+    width: 100%;
     height: 50px;
     background-color: rgba(0, 133, 33, 0.918);
 }
@@ -17,10 +17,11 @@
     color: white;
     background-color: transparent;
     cursor: pointer;
+    padding: 0 20px;
 }
 
 button.active {
-    min-width: 70px;
+    min-width: 50px;
     height: 100%;
     color: rgba(0, 133, 33, 0.918);
     background-color: white;
@@ -30,7 +31,7 @@ button.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
+    width: 70px;
     height: 100%;
     color: rgba(0, 133, 33, 0.918);
     background-color: white;
@@ -45,14 +46,14 @@ button.active {
     content: '\f061';
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .pagination .button-pagination.prev::before {
     content: '\f060';
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .items-container {
@@ -69,4 +70,18 @@ button.active {
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
+}
+
+@media screen and (min-width: 360px) and (max-width: 480px) {
+    .pagination {
+        width: auto;
+    }
+
+    .pagination button {
+        padding: 0 10px;
+    }
+
+    button.active {
+        min-width: 40px;
+    }
 }
