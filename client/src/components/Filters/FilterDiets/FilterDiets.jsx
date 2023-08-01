@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDiets, getRecipes, searchRecipes, sortRecipes } from '../../../redux/actions';
+import { getDiets, searchRecipes, sortRecipes } from '../../../redux/actions';
 import './filterDiets.css'
 
 const FilterDiets = () => {
@@ -8,34 +8,33 @@ const FilterDiets = () => {
 
     const [alphaSort, setAlphaSort] = useState('default');
     const [scoreSort, setScoreSort] = useState('default');
-    const [isCreated, setIsCreated] = useState('default');
+    // const [isCreated, setIsCreated] = useState('default');
 
     const diets = useSelector((state) => state.diets.map((diet) => diet));
     const searchTerm = useSelector((state) => state.searchTerm);
     const selectedDiet = useSelector((state) => state.selectedDiet);
+    const isCreated = useSelector((state) => state.isCreated);
 
     useEffect(() => {
         dispatch(getDiets());
         dispatch(sortRecipes(alphaSort));
         dispatch(sortRecipes(scoreSort));
-        dispatch(searchRecipes(searchTerm, selectedDiet, isCreated));
     }, [dispatch, alphaSort, scoreSort, isCreated]);
 
     const handleChange = (event) => {
         const selectedDiet = event.target.value.toLowerCase();
-        dispatch(searchRecipes(searchTerm, selectedDiet));
+        dispatch(searchRecipes(searchTerm, selectedDiet, isCreated));
     };
 
-    // const handleIsCreated = event => {
-    //     // Se pasa true como tercer parámetro
-    // };
-
+    const handleCreatedChange = event => {
+        const isCreated = event.target.value;
+        dispatch(searchRecipes(searchTerm, selectedDiet, isCreated))
+    }
 
     const handleSortReset = () => {
         setAlphaSort('default');
         setScoreSort('default');
-        setIsCreated('default')
-        dispatch(searchRecipes(searchTerm, selectedDiet));
+        dispatch(searchRecipes(searchTerm, selectedDiet, 'default'));
     };
 
     return (
@@ -50,7 +49,7 @@ const FilterDiets = () => {
                 ))}
             </select>
 
-            <label htmlFor="">Order:</label>
+            <label >Order:</label>
             <select
                 className='filter__select'
                 value={alphaSort}
@@ -62,7 +61,7 @@ const FilterDiets = () => {
                 <option value="alpha_desc">Descendant</option>
             </select>
 
-            <label htmlFor="">Health Score:</label>
+            <label >Health Score:</label>
             <select
                 className='filter__select'
                 value={scoreSort}
@@ -74,24 +73,18 @@ const FilterDiets = () => {
                 <option value="score_desc">Descendant</option>
             </select>
 
-            <label htmlFor="">Created By:</label>
+            <label >Created By:</label>
             <select
                 className='filter__select'
                 value={isCreated}
                 name="" id=""
-                onChange={event => setIsCreated(event.target.value)}
+                onChange={event => handleCreatedChange(event)}
             >
                 <option value='default'>Select a Option</option>
                 <option value="created">Users</option>
                 <option value="notCreated">Default</option>
             </select>
 
-            {/* <button type="button" onClick={handleCreated}>
-                Created
-            </button>
-            <button type="button" onClick={handleNotCreated}>
-                Not Created
-            </button> */}
             <button className='filter__button-reset' type="button" onClick={handleSortReset}>
                 Reset Sort
             </button>
