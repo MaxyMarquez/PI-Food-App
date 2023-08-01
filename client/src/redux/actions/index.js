@@ -11,7 +11,7 @@ export const SORT_RECIPES = 'SORT_RECIPES';
 export const getRecipes = () => {
     return async dispatch => {
         try {
-            const { data } = await axios.get('/recipes')
+            const { data } = await axios.get('http://localhost:3001/recipes')
             dispatch({
                 type: GET_RECIPES,
                 payload: {
@@ -33,7 +33,7 @@ export const getRecipeByID = id => {
                 payload: {}
             });
 
-            const { data } = await axios.get(`/recipes/${id}`);
+            const { data } = await axios.get(`http://localhost:3001/recipes/${id}`);
 
             dispatch({
                 type: GET_RECIPE_BY_ID,

@@ -16,3 +16,16 @@
     border-bottom: 1px solid rgb(165, 164, 164);
     margin: 0 10px;
 }
+
+.filter__button-reset {
+    padding: 5px 10px;
+    border: none;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.filter__button-reset:hover {
+    background-color: red;
+}

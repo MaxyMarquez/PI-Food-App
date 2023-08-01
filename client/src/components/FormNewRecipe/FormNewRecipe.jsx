@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getDiets, postRecipe } from '../../redux/actions';
 import formValidation from './formValidations'
+import Modal from '../Modal/Modal';
+
 import './formNewRecipe.css'
 
 const FormNewRecipe = () => {
@@ -22,7 +24,8 @@ const FormNewRecipe = () => {
     const [errorStep, setErrorStep] = useState('');
     const [disabled, setDisabled] = useState(false);
     const [editingStep, setEditingStep] = useState(null);
-    const [editingStepIndex, setEditingStepIndex] = useState('')
+    const [editingStepIndex, setEditingStepIndex] = useState('');
+    const [modalVisible, setModalVisible] = useState(false);
 
     useEffect(() => {
         dispatch(getDiets())
@@ -99,15 +102,17 @@ const FormNewRecipe = () => {
         }
 
         try {
+            setModalVisible(true);
+
             dispatch(postRecipe(formData));
 
             setRecipeName('');
+            setRecipeImage('');
             setRecipeSummary('');
             setSteps([]);
             setCurrentStep('');
             setRecipeHealthScore(0);
             setDiet([]);
-            setRecipeImage(null);
         } catch (error) {
             console.error(error);
         }
@@ -117,6 +122,7 @@ const FormNewRecipe = () => {
 
     return (
         <form className='form__container' onSubmit={handleSubmit}>
+            <Modal isOpen={modalVisible} />
             <div className='form__input__container'>
                 {/* Form title */}
                 <div className='form__title'>
@@ -238,7 +244,8 @@ const FormNewRecipe = () => {
                 {/* Button submit */}
                 <input className='form__submit' type="submit" value="Submit" disabled={!isSubmitButtonEnabled} />
             </div>
-        </form>
+        </form >
+
     )
 }
 

@@ -3,8 +3,8 @@ import Home from './components/Home/Home';
 import Nav from './components/Nav/Nav';
 import FormNewRecipe from './components/FormNewRecipe/FormNewRecipe';
 import RecipeDetail from './components/RecipeDetail/RecipeDetail';
-import './App.css';
 import LandingPage from './components/LandingPage/LandingPage';
+import './App.css';
 import axios from 'axios';
 axios.defaults.baseURL = 'https://pi-food-app-production.up.railway.app/'
 
