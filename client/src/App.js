@@ -6,7 +6,7 @@ import RecipeDetail from './components/RecipeDetail/RecipeDetail';
 import './App.css';
 import LandingPage from './components/LandingPage/LandingPage';
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:3001'
+axios.defaults.baseURL = 'https://pi-food-app-production.up.railway.app/'
 
 function App() {
 
