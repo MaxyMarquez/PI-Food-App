@@ -1,0 +1,30 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+
+.stars-gray {
+    position: relative;
+    display: inline-block;
+    z-index: 100;
+}
+
+.stars-yellow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+}
+
+.stars-gray::before {
+    content: "\f787 \f787 \f787 \f787 \f787";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 800;
+    color: #000000;
+}
+
+.stars-yellow::before {
+    content: "\f787 \f787 \f787 \f787 \f787";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 800;
+    color: #f87e0b;
+}

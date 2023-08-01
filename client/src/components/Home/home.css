@@ -1,0 +1,12 @@
+.home__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.home__components {
+    width: 100%;
+}

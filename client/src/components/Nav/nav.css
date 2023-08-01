@@ -1,0 +1,21 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+
+.nav__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(230, 230, 230, 0.918);
+    z-index: 100;
+}
+
+.nav__container a {
+    height: 40px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.4rem;
+    position: relative;
+    z-index: 1;
+}

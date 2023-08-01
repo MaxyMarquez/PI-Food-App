@@ -1,0 +1,72 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+
+.pagination {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+    width: 650px;
+    height: 50px;
+    background-color: rgba(0, 133, 33, 0.918);
+}
+
+.pagination button {
+    font-size: 1.3rem;
+    border: none;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button.active {
+    min-width: 70px;
+    height: 100%;
+    color: rgba(0, 133, 33, 0.918);
+    background-color: white;
+}
+
+.pagination .button-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 100%;
+    color: rgba(0, 133, 33, 0.918);
+    background-color: white;
+}
+
+.ellipsis {
+    color: white;
+    font-size: 1.2em;
+}
+
+.pagination .button-pagination.next::before {
+    content: '\f061';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1.5em;
+}
+
+.pagination .button-pagination.prev::before {
+    content: '\f060';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1.5em;
+}
+
+.items-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.render {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}

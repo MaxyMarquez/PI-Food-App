@@ -1,0 +1,73 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+
+.landing__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../assets/landing_page.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.landing__info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 600px;
+    height: 400px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 10px white;
+    background-color: rgba(255, 255, 255, 0.767);
+}
+
+.landing__info h2 {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.landing__buttom {
+    margin: 20px 0;
+    padding: 8px 25px;
+    color: white;
+    text-decoration: none;
+    background-color: rgb(136, 136, 136);
+    transition: all .3s ease;
+}
+
+.landing__buttom:hover {
+    background-color: black;
+}
+
+.landing__social {
+    position: absolute;
+    bottom: 0;
+}
+
+.landing__social a {
+    text-decoration: none;
+    font-size: 3rem;
+    margin: 10px;
+    transition: all .5s;
+}
+
+.landing__social a svg {
+    fill: rgb(136, 136, 136);
+}
+
+.linkedin:hover svg {
+    fill: rgb(14, 118, 168);
+    transition: all .3s ease;
+}
+
+.github:hover svg {
+    fill: rgb(0, 0, 0);
+    transition: all .3s ease;
+}

@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+
+.form__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-image: url('../../assets/form_image.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.form__input__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 700px;
+    padding: 30px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.918);
+}
+
+.form__title,
+.form__image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 130px;
+    margin: 10px;
+    padding: 10px;
+    /* box-shadow: 3px 3px 10px black; */
+    /* background-color: rgba(146, 19, 19, 0.747); */
+}
+
+.form__label {
+    text-align: center;
+    width: auto;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    font-family: 'Shadows Into Light Two', cursive;
+}
+
+.form__input {
+    width: 100%;
+}
+
+.form__input p {
+    position: absolute;
+    bottom: 0;
+}
+
+.form__input input {
+    width: 100%;
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    border: none;
+    border-bottom: 2px solid rgba(126, 126, 126, 0.322);
+    padding-inline: 0.5em;
+    padding-block: 0.5em;
+    background-color: transparent;
+    transition: all .3s;
+}
+
+.form__summary,
+.form__steps,
+.form__score,
+.form__diets {
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px;
+    padding: 10px
+}
+
+.form__steps ul {
+    margin: 15px 10px;
+}
+
+.form__steps ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 5px 0;
+    font-size: 1.2em;
+}
+
+.form__steps .button__add {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    border: none;
+    padding: 10px;
+    color: white;
+    background-color: rgb(39, 39, 39);
+    cursor: pointer;
+}
+
+.form__steps button[disabled] {
+    background-color: rgb(128, 128, 128);
+}
+
+.form__range {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.form__range input {
+    width: 263px;
+}
+
+.form__textarea {
+    width: 100%;
+}
+
+.form__textarea textarea {
+    width: 100%;
+    margin: 10px 0;
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    border: 2px solid rgba(126, 126, 126, 0.322);
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    resize: none;
+    background-color: transparent;
+}
+
+.form__input__diets {
+    display: flex;
+    align-items: first baseline;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10px;
+    width: 100%;
+    height: 150px;
+}
+
+.form__label__diets {
+    padding: 5px;
+    font-size: 1.2em;
+}
+
+.form__label__diets input {
+    margin: 0 10px;
+}
+
+.form__input input:focus,
+.form__textarea textarea:focus {
+    outline: none;
+}
+
+.form__submit {
+    width: 200px;
+    height: 40px;
+    border: none;
+    font-size: 1.3em;
+    color: rgb(252, 252, 252);
+    background-color: rgb(0, 145, 0);
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.form__submit:hover {
+    background-color: rgb(0, 197, 0);
+}
+
+.form__submit[disabled] {
+    background-color: rgb(255, 0, 0)
+}
+
+.button__edit,
+.button__delete {
+    text-align: center;
+    width: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: .7em;
+}
+
+.button__edit {
+    margin-left: 15px;
+}
+
+.button__edit::before {
+    content: '\f044';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.button__delete::before {
+    content: '\f1f8';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 1.2em;
+}
+
+.button__cancel {
+    position: absolute;
+    top: 20px;
+    right: 90px;
+    border: none;
+    padding: 10px;
+    color: white;
+    background-color: rgb(39, 39, 39);
+    cursor: pointer;
+}
+
+.form__error {
+    color: red;
+}
