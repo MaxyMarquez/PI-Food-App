@@ -63,6 +63,7 @@ const RecipeDetail = () => {
                         <div className='recipe-detail__header'>
                             <div className='recipe-detail__img'>
                                 <img src={recipe.image} alt="" />
+                                <p>ID: {recipe.id}</p>
                             </div>
 
                             <div className='recipe-detail__summary'>
