@@ -1,6 +1,8 @@
 const validations = ({ name, summary, image, steps, diet }, recipes) => {
     const errors = {};
 
+    const regexURL = /^https?:\/\/.*\/.*\.(png|jpeg|jpg)\??.*$/gmi
+
     const isTitleExist = name => recipes.some(recipe => recipe.title === name)
 
     if (isTitleExist(name)) {
@@ -19,9 +21,9 @@ const validations = ({ name, summary, image, steps, diet }, recipes) => {
     }
 
     if (!image) {
-        errors.image = '* You must enter an URL image to your recipe.'
-    } else if (!/(https?:\/\/.*\.(?:png|jpg))/i.test(image)) {
-        errors.image = '* Invalid image format.'
+        errors.image = '* You must enter an URL image to your recipe. Example: www.example.com/image.jpg'
+    } else if (!regexURL.test(image)) {
+        errors.image = '* Invalid image format. png | jpeg| jpg are valid'
     }
 
     if (steps.length < 1) {
