@@ -48,6 +48,7 @@ const RecipeDetail = () => {
 
                         <div className='recipe-detail__title'>
                             <h2>{recipe.title}</h2>
+                            <p>ID: {recipe.id}</p>
                             {
                                 recipe.hasOwnProperty('created') ? (
                                     <div>
@@ -63,7 +64,7 @@ const RecipeDetail = () => {
                         <div className='recipe-detail__header'>
                             <div className='recipe-detail__img'>
                                 <img src={recipe.image} alt="" />
-                                <p>ID: {recipe.id}</p>
+
                             </div>
 
                             <div className='recipe-detail__summary'>
