@@ -7,6 +7,7 @@ export const GET_RECIPE_BY_ID = 'GET_RECIPE_BY_ID';
 export const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 export const SEARCH_RECIPES = 'SEARCH_RECIPES'
 export const SORT_RECIPES = 'SORT_RECIPES';
+export const DELETE_RECIPE = 'DELETE_RECIPE';
 
 export const getRecipes = () => {
     return async dispatch => {
@@ -46,22 +47,6 @@ export const getRecipeByID = id => {
     };
 };
 
-export const postRecipe = (info) => {
-    return async dispatch => {
-        try {
-
-            const response = await axios.post('/create_recipe', info);
-
-            dispatch({
-                type: POST_RESPONSE,
-                payload: response,
-            });
-        } catch (error) {
-            console.error(error)
-        }
-    };
-};
-
 export const getDiets = () => {
     return async dispatch => {
         try {
@@ -75,6 +60,36 @@ export const getDiets = () => {
         }
     };
 };
+
+export const postRecipe = (info) => {
+    return async dispatch => {
+        try {
+            const response = await axios.post('/recipes', info);
+
+            dispatch({
+                type: POST_RESPONSE,
+                payload: response.status,
+            });
+        } catch (error) {
+            console.error(error)
+        }
+    };
+};
+
+export const deleteRecipe = (id) => {
+    return async dispatch => {
+        try {
+            await axios.delete(`/recipes/${id}`);
+
+            dispatch({
+                type: DELETE_RECIPE,
+                payload: id
+            })
+        } catch (error) {
+
+        }
+    }
+}
 
 export const setCurrentPage = (page) => {
     return {

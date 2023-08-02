@@ -5,6 +5,7 @@ import formValidation from './formValidations'
 import Modal from '../Modal/Modal';
 
 import './formNewRecipe.css'
+import { Link } from 'react-router-dom';
 
 const FormNewRecipe = () => {
 
@@ -122,7 +123,15 @@ const FormNewRecipe = () => {
 
     return (
         <form className='form__container' onSubmit={handleSubmit}>
-            <Modal isOpen={modalVisible} />
+
+            <Modal isOpen={modalVisible} onClose={() => setModalVisible(false)}>
+                <div className='form__modal'>
+                    <span className='checkmark'></span>
+                    <h2 className='modal__title'>WELL DONE RECIPE CREATE!!</h2>
+                    <Link className='modal__button' to='/home'>Done</Link>
+                </div>
+            </Modal>
+
             <div className='form__input__container'>
                 {/* Form title */}
                 <div className='form__title'>

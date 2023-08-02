@@ -81,8 +81,9 @@ const FilterDiets = () => {
                 onChange={event => handleCreatedChange(event)}
             >
                 <option value='default'>Select a Option</option>
+                <option value="notCreated">API</option>
                 <option value="created">Users</option>
-                <option value="notCreated">Default</option>
+                <option value='all'>Both</option>
             </select>
 
             <button className='filter__button-reset' type="button" onClick={handleSortReset}>

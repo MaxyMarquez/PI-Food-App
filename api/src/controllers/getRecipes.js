@@ -42,7 +42,7 @@ const getRecipesAPI = async () => {
     }
 };
 
-// Función para traer todas las recipes de la base de datos
+// Función para traer todas las recipes de la base de datos.
 const getRecipesDB = async () => {
     const recipe = await Recipe.findAll({
         include: {
@@ -69,7 +69,7 @@ const getRecipesDB = async () => {
     return recipesDB
 };
 
-// Función que concatena los resultados de la base de datos con los de la API
+// Función que concatena los resultados de la base de datos con los de la API.
 const getAllRecipes = async () => {
     const recipeApi = await getRecipesAPI();
     const recipeDB = await getRecipesDB();
@@ -77,6 +77,7 @@ const getAllRecipes = async () => {
     return recipeDB.concat(recipeApi)
 }
 
+// Función que filtra por nombre, dieta y tiene la propiedad created. 
 const getFilteredRecipes = async (name, diet, isCreated) => {
     const allRecipes = await getAllRecipes();
 
@@ -94,15 +95,18 @@ const getFilteredRecipes = async (name, diet, isCreated) => {
         recipes = recipes.filter(recipe => recipe.hasOwnProperty('created'));
     } else if (isCreated === 'notCreated') {
         recipes = recipes.filter(recipe => !recipe.hasOwnProperty('created'));
+    } else if (isCreated === 'all') {
+        return recipes
     }
 
     return recipes;
 }
 
-// Función que devuelve recipe por ID
-const getRecipeByID = async (id) => {
+// Función que devuelve una receta filtrado por ID
+const getRecipeByID = async id => {
     try {
         const recipes = await getAllRecipes();
+
         const recipe = recipes.find(result => result.id.toString() === id)
 
         return recipe

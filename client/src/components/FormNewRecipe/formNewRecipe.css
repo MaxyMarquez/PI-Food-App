@@ -218,3 +218,13 @@
 .form__error {
     color: red;
 }
+
+.form__modal {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}

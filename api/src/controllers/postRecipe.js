@@ -12,7 +12,6 @@ const createRecipe = async (req, res) => {
             steps,
         });
 
-
         const addDietsToDb = await Diet.findAll({
             where: {
                 name: diets,

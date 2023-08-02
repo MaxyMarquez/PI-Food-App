@@ -9,6 +9,6 @@ const createRecipeRouter = require('../controllers/postRecipe');
 // Ejemplo: router.use('/auth', authRouter);
 router.use('/recipes', recipes);
 router.use('/diets', diets); // Usar el router de las dietas en la ruta '/diets'
-router.post('/create_recipe', createRecipeRouter);
+router.post('/recipes', createRecipeRouter);
 
 module.exports = router;

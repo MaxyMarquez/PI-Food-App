@@ -1,29 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './modal.css'
 
-const Modal = ({ isOpen, onClose, }) => {
+const Modal = ({ isOpen, onClose, children }) => {
 
     if (!isOpen) {
         return null;
     }
 
-    // const closeModal = () => {
-    //     onClose();
-    // };
-    // 
-    // const handleOutsideClick = (event) => {
-    //     if (event.target === event.currentTarget) {
-    //         closeModal();
-    //     }
-    // };
-    // onClick={handleOutsideClick}
+    const closeModal = () => {
+        onClose();
+    };
+
+    const handleOutsideClick = (event) => {
+        if (event.target === event.currentTarget) {
+            closeModal();
+        }
+    };
+
     return (
-        <div className={`modal ${isOpen ? 'open' : ''}`} >
+        <div className={`modal ${isOpen ? 'open' : ''}`} onClick={handleOutsideClick}>
             <div className="modal-container">
-                <span className='checkmark'></span>
-                <h2 className='modal__title'>WELL DONE RECIPE CREATE!!</h2>
-                <Link className='modal__button' to='/home'>Done</Link>
+                {children}
             </div>
         </div>
     );
