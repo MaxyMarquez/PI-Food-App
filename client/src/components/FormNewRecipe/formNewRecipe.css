@@ -51,7 +51,6 @@
 
 .form__input p {
     position: absolute;
-    bottom: 0;
 }
 
 .form__input input {
@@ -216,6 +215,7 @@
 }
 
 .form__error {
+    padding: 10px;
     color: red;
 }
 
