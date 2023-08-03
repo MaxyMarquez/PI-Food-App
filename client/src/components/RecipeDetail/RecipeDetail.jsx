@@ -13,6 +13,8 @@ const RecipeDetail = () => {
 
     const recipe = useSelector(state => state.recipeDetail);
 
+    const navigation = useNavigate()
+
     const [loading, setLoading] = useState(true);
     const [modalVisible, setModalVisible] = useState(false);
 
@@ -36,6 +38,8 @@ const RecipeDetail = () => {
                 ) : (
                     <div className='recipe-detail'>
 
+                        <button className='recipe-detail__button-back' onClick={() => navigation(-1)}>Go Back</button>
+
                         <Modal isOpen={modalVisible} onClose={() => setModalVisible(false)}>
                             <div className='recipe-detail__modal'>
                                 <h2>Are you sure you want to DELETE this recipe?</h2>
@@ -48,10 +52,9 @@ const RecipeDetail = () => {
 
                         <div className='recipe-detail__title'>
                             <h2>{recipe.title}</h2>
-                            <p>ID: {recipe.id}</p>
                             {
                                 recipe.hasOwnProperty('created') ? (
-                                    <div>
+                                    <div className='recipe-detail__button-delete'>
                                         <button className='button-delete' onClick={handleModal}></button>
                                         <button className='button-edit'></button>
                                     </div>
@@ -64,7 +67,6 @@ const RecipeDetail = () => {
                         <div className='recipe-detail__header'>
                             <div className='recipe-detail__img'>
                                 <img src={recipe.image} alt="" />
-
                             </div>
 
                             <div className='recipe-detail__summary'>
