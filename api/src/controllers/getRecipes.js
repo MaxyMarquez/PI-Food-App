@@ -10,16 +10,16 @@ const getRecipesAPI = async () => {
         // Solicitud GET a la API.
         const { data } = await axios.get(API_URL, {
 
-            // Parámetros especificos de la API (End Points).
-            // params: {
-            //     addRecipeInformation: true,
-            //     number: 100,
-            //     apiKey: API_KEY,
-            // },
+            //Parámetros especificos de la API (End Points).
+            params: {
+                addRecipeInformation: true,
+                number: 100,
+                apiKey: API_KEY,
+            },
         });
-
+        console.log(data);
         // Proceso los datos y los mapeo para obtener información relevante de cada receta.
-        const recipes = await data.results.map(data => ({
+        const recipes = await data.results?.map(data => ({
             id: data.id,
             title: data.title,
             image: data.image,
